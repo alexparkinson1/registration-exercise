@@ -1,0 +1,69 @@
+body {
+  background: #EEEEEE;
+  font-family: sans-serif;
+  color: #565656;
+  margin: 0;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.love-knitting {
+  height: 45px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.heading-text {
+  margin: 0 0 0.25rem 0;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.heading {
+  margin: 1rem 0;
+}
+
+.register-form {
+  background: #FFF;
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+.form-element {
+  margin-bottom: 0.5rem;
+}
+
+.register-button {
+  background-color: #1BA39C;
+  border-radius: 2px;
+  color: #FFF;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.disabled {
+  background-color: grey;
+}
+
+.form-label {
+  text-align: left;
+  display: inline-block;
+  width: 10rem;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 10rem;
+}
+
+.response {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 3rem;
+}
