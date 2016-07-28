@@ -81,13 +81,6 @@ body {
   width: 10rem;
 }
 
-.response {
-  width: 60%;
-  margin: 1rem auto;
-  background-color: #FFF;
-  padding: 3rem;
-}
-
 /* mobile */
 @media (max-width: 600px) {
   .main {

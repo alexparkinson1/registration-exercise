@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $(function() {
     var form = $('#register');
+    var formMessages = $('#form-messages');
     var password = document.getElementById("password");
     var cpassword = document.getElementById("confirmPassword");
 
@@ -12,6 +13,7 @@ $(document).ready(function () {
       }
     }
 
+    password.onchange = validatePassword;
     cpassword.onkeyup = validatePassword;
 
     $('#birthday').datepicker({
@@ -22,10 +24,12 @@ $(document).ready(function () {
     });
 
     $(form).submit(function(event) {
-      var formData = $(form).serialize();
+      event.preventDefault();
 
       $('#register-button').prop('disabled', true);
       $('#register-button').addClass('disabled');
+
+      var formData = $(form).serialize();
 
       $.ajax({
         type: 'POST',
@@ -38,6 +42,25 @@ $(document).ready(function () {
           $('#loading-spinner').removeClass('show');
         },
       })
+
+      .done(function(response) {
+        $(formMessages).text(response);
+
+        $('#email').val('');
+        $('#birthday').val('');
+        $('#password').val('');
+        $('#confirmPassword').val('');
+      })
+
+      .fail(function(data) {
+        if (data.responseText !== '') {
+          $(formMessages).text(data.responseText);
+        } else {
+          $(formMessages).text('Whoops, please try again');
+          $('#register-button').prop('disabled', false);
+          $('#register-button').removeClass('disabled');
+        }
+      });
     });
   });
 });
