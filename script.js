@@ -1,6 +1,18 @@
 $(document).ready(function () {
   $(function() {
     var form = $('#register');
+    var password = document.getElementById("password");
+    var cpassword = document.getElementById("confirmPassword");
+
+    function validatePassword() {
+      if(password.value != cpassword.value) {
+        cpassword.setCustomValidity('Passwords do not match');
+      } else {
+        cpassword.setCustomValidity('');
+      }
+    }
+
+    cpassword.onkeyup = validatePassword;
 
     $('#birthday').datepicker({
       maxDate: new Date,
