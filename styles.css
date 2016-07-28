@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+#ui-datepicker-div {
+  display: none;
+}
+
 .main {
   width: 80%;
   margin: 0 auto;
@@ -14,6 +18,12 @@ body {
   height: 45px;
   display: inline-block;
   vertical-align: bottom;
+}
+
+.love-knitting-sm {
+  height: 45px;
+  vertical-align: bottom;
+  display: none;
 }
 
 .heading-text {
@@ -50,6 +60,16 @@ body {
   background-color: grey;
 }
 
+.loading-spinner {
+  display: none;
+  height: 21px;
+  vertical-align: middle;
+}
+
+.show {
+  display: inline-block;
+}
+
 .form-label {
   text-align: left;
   display: inline-block;
@@ -63,7 +83,30 @@ body {
 
 .response {
   width: 60%;
-  margin: 0 auto;
+  margin: 1rem auto;
   background-color: #FFF;
   padding: 3rem;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .main {
+    width: 100%;
+  }
+
+  .form-label {
+    display: block;
+  }
+
+  .heading {
+    margin-left: 1rem;
+  }
+
+  .love-knitting {
+    display: none;
+  }
+
+  .love-knitting-sm {
+    display: inline-block;
+  }
 }

@@ -30,7 +30,13 @@ $(document).ready(function () {
       $.ajax({
         type: 'POST',
         url: $(form).attr('action'),
-        data: formData
+        data: formData,
+        beforeSend: function() {
+          $('#loading-spinner').addClass('show');
+        },
+        complete: function() {
+          $('#loading-spinner').removeClass('show');
+        },
       })
     });
   });
